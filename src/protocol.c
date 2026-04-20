@@ -121,8 +121,8 @@ const field_map_t api_field_map[] = {
     {112, false, UINT8,  1, offsetof(device_t, config.keybind_config_mode.key2) },
 
     /* Firmware */
-    { 78, true,  UINT16, 2, offsetof(device_t, _running_fw.version) },
-    { 79, true,  UINT32, 4, offsetof(device_t, _running_fw.checksum) },
+    { 60, true,  UINT16, 2, offsetof(device_t, _running_fw.version) },
+    { 61, true,  UINT32, 4, offsetof(device_t, _running_fw.checksum) },
 
     { 80, true,  UINT8,  1, offsetof(device_t, keyboard_connected) },
     { 81, true,  UINT8,  1, offsetof(device_t, switch_lock) },
