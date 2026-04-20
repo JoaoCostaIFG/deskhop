@@ -34,6 +34,11 @@ const field_map_t api_field_map[] = {
     { 21, false, UINT64, 7, offsetof(device_t, config.output[0].screensaver.idle_time_us) },
     { 22, false, UINT64, 7, offsetof(device_t, config.output[0].screensaver.max_time_us) },
 
+    /* Output A - Gaming Edge Switching */
+    { 23, false, UINT32, 4, offsetof(device_t, config.output[0].gaming_edge_threshold) },
+    { 24, false, UINT32, 4, offsetof(device_t, config.output[0].gaming_edge_window_ms) },
+    { 25, false, UINT32, 4, offsetof(device_t, config.output[0].gaming_edge_max_vertical) },
+
     /* Output B */
     { 40, false, UINT32, 4, offsetof(device_t, config.output[1].number) },
     { 41, false, UINT32, 4, offsetof(device_t, config.output[1].screen_count) },
@@ -49,6 +54,11 @@ const field_map_t api_field_map[] = {
     { 51, false, UINT64, 7, offsetof(device_t, config.output[1].screensaver.idle_time_us) },
     { 52, false, UINT64, 7, offsetof(device_t, config.output[1].screensaver.max_time_us) },
 
+    /* Output B - Gaming Edge Switching */
+    { 53, false, UINT32, 4, offsetof(device_t, config.output[1].gaming_edge_threshold) },
+    { 54, false, UINT32, 4, offsetof(device_t, config.output[1].gaming_edge_window_ms) },
+    { 55, false, UINT32, 4, offsetof(device_t, config.output[1].gaming_edge_max_vertical) },
+
     /* Common config */
     { 70, false, UINT32, 4, offsetof(device_t, config.version) },
     { 71, false, UINT8,  1, offsetof(device_t, config.force_mouse_boot_mode) },
@@ -58,6 +68,7 @@ const field_map_t api_field_map[] = {
     { 76, false, UINT8,  1, offsetof(device_t, config.enforce_ports) },
     { 77, false, UINT16, 2, offsetof(device_t, config.jump_threshold) },
     { 78, false, UINT8,  1, offsetof(device_t, config.force_gaming_mode) },
+    { 79, false, UINT8,  1, offsetof(device_t, config.gaming_edge_enabled) },
 
     /* Keybinds - Output Toggle */
     { 83, false, UINT8,  1, offsetof(device_t, config.keybind_output_toggle.modifier) },

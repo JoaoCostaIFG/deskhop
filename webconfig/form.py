@@ -127,6 +127,7 @@ CONFIG_ = [
     FormField(1001, "Mouse", elem="label"),
     FormField(71, "Force Mouse Boot Mode", None, {}, "uint8", "checkbox"),
     FormField(78, "Start in Gaming Mode", None, {}, "uint8", "checkbox"),
+    FormField(79, "Gaming Edge Switching", None, {}, "uint8", "checkbox"),
     FormField(75, "Enable Acceleration", None, {}, "uint8", "checkbox"),
     FormField(77, "Jump Threshold", 0, {"min": 0, "max": 3000}, "uint16", "range"),
     FormField(1002, "Keyboard", elem="label"),
@@ -157,6 +158,14 @@ OUTPUT_ = [
     FormField(10, "Only If Inactive", None, {}, "uint8", "checkbox"),
     FormField(11, "Idle Time (μs)", None, {}, "uint64"),
     FormField(12, "Max Time (μs)", None, {}, "uint64"),
+    FormField(1004, "Gaming Edge Switching", elem="label"),
+    FormField(
+        13, "Edge Threshold", 20000, {"min": 1000, "max": 100000}, "uint32", "range"
+    ),
+    FormField(
+        14, "Edge Window (ms)", 1000, {"min": 100, "max": 5000}, "uint32", "range"
+    ),
+    FormField(15, "Max Vertical", 2000, {"min": 100, "max": 50000}, "uint32", "range"),
 ]
 
 KEYBINDS_ = [
