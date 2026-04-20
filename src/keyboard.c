@@ -15,98 +15,105 @@
  * Hotkeys to trigger actions via the keyboard.
  * ==================================================== */
 
-hotkey_combo_t hotkeys[] = {
-    /* Main keyboard switching hotkey */
-    {.modifier       = HOTKEY_MODIFIER,
-     .keys           = {HOTKEY_TOGGLE},
-     .key_count      = 1,
-     .pass_to_os     = false,
-     .action_handler = &output_toggle_hotkey_handler},
+hotkey_combo_t hotkeys[HOTKEY_COUNT];
 
-    /* Pressing right ALT + right CTRL toggles the slow mouse mode */
-    {.modifier       = KEYBOARD_MODIFIER_RIGHTALT | KEYBOARD_MODIFIER_RIGHTCTRL,
-     .keys           = {},
-     .key_count      = 0,
-     .pass_to_os     = true,
-     .acknowledge    = true,
-     .action_handler = &mouse_zoom_hotkey_handler},
+void load_keybinds(device_t *state) {
+    config_t *cfg = &state->config;
 
-    /* Switch lock */
-    {.modifier       = KEYBOARD_MODIFIER_RIGHTCTRL,
-     .keys           = {HID_KEY_K},
-     .key_count      = 1,
-     .acknowledge    = true,
-     .action_handler = &switchlock_hotkey_handler},
+    hotkeys[0] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_output_toggle.modifier,
+        .keys           = {cfg->keybind_output_toggle.key1, cfg->keybind_output_toggle.key2},
+        .key_count      = cfg->keybind_output_toggle.key2 ? 2 : (cfg->keybind_output_toggle.key1 ? 1 : 0),
+        .pass_to_os     = false,
+        .action_handler = &output_toggle_hotkey_handler};
 
-    /* Screen lock */
-    {.modifier       = KEYBOARD_MODIFIER_RIGHTCTRL,
-     .keys           = {HID_KEY_L},
-     .key_count      = 1,
-     .acknowledge    = true,
-     .action_handler = &screenlock_hotkey_handler},
+    hotkeys[1] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_mouse_zoom.modifier,
+        .keys           = {cfg->keybind_mouse_zoom.key1, cfg->keybind_mouse_zoom.key2},
+        .key_count      = cfg->keybind_mouse_zoom.key2 ? 2 : (cfg->keybind_mouse_zoom.key1 ? 1 : 0),
+        .pass_to_os     = true,
+        .acknowledge    = true,
+        .action_handler = &mouse_zoom_hotkey_handler};
 
-    /* Toggle gaming mode */
-    {.modifier       = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
-     .keys           = {HID_KEY_G},
-     .key_count      = 1,
-     .acknowledge    = true,
-     .action_handler = &toggle_gaming_mode_handler},
+    hotkeys[2] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_switch_lock.modifier,
+        .keys           = {cfg->keybind_switch_lock.key1, cfg->keybind_switch_lock.key2},
+        .key_count      = cfg->keybind_switch_lock.key2 ? 2 : (cfg->keybind_switch_lock.key1 ? 1 : 0),
+        .acknowledge    = true,
+        .action_handler = &switchlock_hotkey_handler};
 
-    /* Enable screensaver pong for active output */
-    {.modifier       = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
-     .keys           = {HID_KEY_S},
-     .key_count      = 1,
-     .acknowledge    = true,
-     .action_handler = &enable_screensaver_pong_hotkey_handler},
+    hotkeys[3] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_screen_lock.modifier,
+        .keys           = {cfg->keybind_screen_lock.key1, cfg->keybind_screen_lock.key2},
+        .key_count      = cfg->keybind_screen_lock.key2 ? 2 : (cfg->keybind_screen_lock.key1 ? 1 : 0),
+        .acknowledge    = true,
+        .action_handler = &screenlock_hotkey_handler};
 
-    /* Enable screensaver jitter for active output */
-    {.modifier       = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
-     .keys           = {HID_KEY_J},
-     .key_count      = 1,
-     .acknowledge    = true,
-     .action_handler = &enable_screensaver_jitter_hotkey_handler},
+    hotkeys[4] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_gaming_mode.modifier,
+        .keys           = {cfg->keybind_gaming_mode.key1, cfg->keybind_gaming_mode.key2},
+        .key_count      = cfg->keybind_gaming_mode.key2 ? 2 : (cfg->keybind_gaming_mode.key1 ? 1 : 0),
+        .acknowledge    = true,
+        .action_handler = &toggle_gaming_mode_handler};
 
-    /* Disable screensaver for active output */
-    {.modifier       = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
-     .keys           = {HID_KEY_X},
-     .key_count      = 1,
-     .acknowledge    = true,
-     .action_handler = &disable_screensaver_hotkey_handler},
+    hotkeys[5] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_screensaver_pong.modifier,
+        .keys           = {cfg->keybind_screensaver_pong.key1, cfg->keybind_screensaver_pong.key2},
+        .key_count      = cfg->keybind_screensaver_pong.key2 ? 2 : (cfg->keybind_screensaver_pong.key1 ? 1 : 0),
+        .acknowledge    = true,
+        .action_handler = &enable_screensaver_pong_hotkey_handler};
 
-    /* Erase stored config */
-    {.modifier       = KEYBOARD_MODIFIER_RIGHTSHIFT,
-     .keys           = {HID_KEY_F12, HID_KEY_D},
-     .key_count      = 2,
-     .acknowledge    = true,
-     .action_handler = &wipe_config_hotkey_handler},
+    hotkeys[6] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_screensaver_jitter.modifier,
+        .keys           = {cfg->keybind_screensaver_jitter.key1, cfg->keybind_screensaver_jitter.key2},
+        .key_count      = cfg->keybind_screensaver_jitter.key2 ? 2 : (cfg->keybind_screensaver_jitter.key1 ? 1 : 0),
+        .acknowledge    = true,
+        .action_handler = &enable_screensaver_jitter_hotkey_handler};
 
-    /* Record switch y coordinate  */
-    {.modifier       = KEYBOARD_MODIFIER_RIGHTSHIFT,
-     .keys           = {HID_KEY_F12, HID_KEY_Y},
-     .key_count      = 2,
-     .acknowledge    = true,
-     .action_handler = &screen_border_hotkey_handler},
+    hotkeys[7] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_screensaver_disable.modifier,
+        .keys           = {cfg->keybind_screensaver_disable.key1, cfg->keybind_screensaver_disable.key2},
+        .key_count      = cfg->keybind_screensaver_disable.key2 ? 2 : (cfg->keybind_screensaver_disable.key1 ? 1 : 0),
+        .acknowledge    = true,
+        .action_handler = &disable_screensaver_hotkey_handler};
 
-    /* Switch to configuration mode  */
-    {.modifier       = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
-     .keys           = {HID_KEY_C, HID_KEY_O},
-     .key_count      = 2,
-     .acknowledge    = true,
-     .action_handler = &config_enable_hotkey_handler},
+    /* Erase stored config - hardcoded, not configurable */
+    hotkeys[8] = (hotkey_combo_t){
+        .modifier       = KEYBOARD_MODIFIER_RIGHTSHIFT,
+        .keys           = {HID_KEY_F12, HID_KEY_D},
+        .key_count      = 2,
+        .acknowledge    = true,
+        .action_handler = &wipe_config_hotkey_handler};
 
-    /* Hold down left shift + right shift + F12 + A ==> firmware upgrade mode for board A (kbd) */
-    {.modifier       = KEYBOARD_MODIFIER_RIGHTSHIFT | KEYBOARD_MODIFIER_LEFTSHIFT,
-     .keys           = {HID_KEY_A},
-     .key_count      = 1,
-     .acknowledge    = true,
-     .action_handler = &fw_upgrade_hotkey_handler_A},
+    hotkeys[9] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_record_border.modifier,
+        .keys           = {cfg->keybind_record_border.key1, cfg->keybind_record_border.key2},
+        .key_count      = cfg->keybind_record_border.key2 ? 2 : (cfg->keybind_record_border.key1 ? 1 : 0),
+        .acknowledge    = true,
+        .action_handler = &screen_border_hotkey_handler};
 
-    /* Hold down left shift + right shift + F12 + B ==> firmware upgrade mode for board B (mouse) */
-    {.modifier       = KEYBOARD_MODIFIER_RIGHTSHIFT | KEYBOARD_MODIFIER_LEFTSHIFT,
-     .keys           = {HID_KEY_B},
-     .key_count      = 1,
-     .acknowledge    = true,
-     .action_handler = &fw_upgrade_hotkey_handler_B}};
+    hotkeys[10] = (hotkey_combo_t){
+        .modifier       = cfg->keybind_config_mode.modifier,
+        .keys           = {cfg->keybind_config_mode.key1, cfg->keybind_config_mode.key2},
+        .key_count      = cfg->keybind_config_mode.key2 ? 2 : (cfg->keybind_config_mode.key1 ? 1 : 0),
+        .acknowledge    = true,
+        .action_handler = &config_enable_hotkey_handler};
+
+    /* Firmware upgrade - hardcoded, not configurable */
+    hotkeys[11] = (hotkey_combo_t){
+        .modifier       = KEYBOARD_MODIFIER_RIGHTSHIFT | KEYBOARD_MODIFIER_LEFTSHIFT,
+        .keys           = {HID_KEY_A},
+        .key_count      = 1,
+        .acknowledge    = true,
+        .action_handler = &fw_upgrade_hotkey_handler_A};
+
+    hotkeys[12] = (hotkey_combo_t){
+        .modifier       = KEYBOARD_MODIFIER_RIGHTSHIFT | KEYBOARD_MODIFIER_LEFTSHIFT,
+        .keys           = {HID_KEY_B},
+        .key_count      = 1,
+        .acknowledge    = true,
+        .action_handler = &fw_upgrade_hotkey_handler_B};
+}
 
 /* ============================================================ *
  * Detect if any hotkeys were pressed
@@ -141,7 +148,7 @@ bool check_specific_hotkey(hotkey_combo_t keypress, const hid_keyboard_report_t 
 
 /* Go through the list of hotkeys, check if any of them match. */
 hotkey_combo_t *check_all_hotkeys(hid_keyboard_report_t *report, device_t *state) {
-    for (int n = 0; n < ARRAY_SIZE(hotkeys); n++) {
+    for (int n = 0; n < HOTKEY_COUNT; n++) {
         if (check_specific_hotkey(hotkeys[n], report)) {
             return &hotkeys[n];
         }

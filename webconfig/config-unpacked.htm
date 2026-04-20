@@ -672,6 +672,61 @@ img {
 .online {
   opacity: 0.5;
 }
+
+.keybind-group {
+  border: 0.1rem solid #d7e5f0;
+  border-radius: .4rem;
+  padding: 1.0rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.keybind-label {
+  font-weight: 700;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.keybind-modifiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  margin-bottom: .8rem;
+}
+
+.modifier-check {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-weight: normal;
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+.modifier-check input[type='checkbox'] {
+  margin: 0;
+}
+
+.keybind-keys {
+  display: flex;
+  align-items: center;
+  gap: 1.0rem;
+  flex-wrap: wrap;
+}
+
+.keybind-key-label {
+  font-weight: normal;
+  font-size: 1.4rem;
+  display: inline;
+  margin-bottom: 0;
+}
+
+.keybind-key1,
+.keybind-key2 {
+  width: auto;
+  min-width: 14rem;
+  height: 3.0rem;
+  margin-bottom: 0;
+}
   </style>
 
   <title>DeskHop Config</title>
@@ -1497,6 +1552,30 @@ img {
   
   <div class="clearfix">
     
+<label class="label-inline"> Start in Gaming Mode</label>
+
+    
+<input class="api" type="checkbox" name="name78" data-type="uint8" data-key="78"
+  onchange="valueChangedHandler(this)"
+  />
+
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="clearfix">
+    
 <label class="label-inline"> Enable Acceleration</label>
 
     
@@ -1633,6 +1712,3674 @@ img {
 
             
 
+          <h3>Keybinds</h3>
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Output Toggle">
+    <label class="keybind-label">Output Toggle</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="83" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="83" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="83" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="83" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="83" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="83" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="83" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="83" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="84" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="85" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Mouse Zoom">
+    <label class="keybind-label">Mouse Zoom</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="86" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="86" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="86" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="86" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="86" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="86" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="86" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="86" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="87" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="88" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Switch Lock">
+    <label class="keybind-label">Switch Lock</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="89" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="89" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="89" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="89" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="89" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="89" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="89" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="89" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="90" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="91" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Screen Lock">
+    <label class="keybind-label">Screen Lock</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="92" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="92" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="92" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="92" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="92" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="92" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="92" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="92" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="93" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="94" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Gaming Mode">
+    <label class="keybind-label">Gaming Mode</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="95" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="95" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="95" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="95" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="95" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="95" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="95" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="95" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="96" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="97" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Screensaver Pong">
+    <label class="keybind-label">Screensaver Pong</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="98" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="98" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="98" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="98" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="98" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="98" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="98" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="98" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="99" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="100" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Screensaver Jitter">
+    <label class="keybind-label">Screensaver Jitter</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="101" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="101" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="101" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="101" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="101" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="101" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="101" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="101" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="102" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="103" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Screensaver Disable">
+    <label class="keybind-label">Screensaver Disable</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="104" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="104" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="104" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="104" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="104" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="104" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="104" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="104" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="105" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="106" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Record Border Y">
+    <label class="keybind-label">Record Border Y</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="107" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="107" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="107" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="107" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="107" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="107" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="107" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="107" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="108" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="109" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+              
+
+
+
+
+
+
+
+
+  
+  <div class="keybind-group" data-keybind-name="Config Mode">
+    <label class="keybind-label">Config Mode</label>
+    <div class="keybind-modifiers">
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="110" data-bit="1" /> Left Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="110" data-bit="2" /> Left Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="110" data-bit="4" /> Left Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="110" data-bit="8" /> Left GUI</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="110" data-bit="16" /> Right Ctrl</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="110" data-bit="32" /> Right Shift</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="110" data-bit="64" /> Right Alt</label>
+    
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="110" data-bit="128" /> Right GUI</label>
+    
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="111" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="112" required>
+      
+        <option value="0">None</option>
+      
+        <option value="4">A</option>
+      
+        <option value="5">B</option>
+      
+        <option value="6">C</option>
+      
+        <option value="7">D</option>
+      
+        <option value="8">E</option>
+      
+        <option value="9">F</option>
+      
+        <option value="10">G</option>
+      
+        <option value="11">H</option>
+      
+        <option value="12">I</option>
+      
+        <option value="13">J</option>
+      
+        <option value="14">K</option>
+      
+        <option value="15">L</option>
+      
+        <option value="16">M</option>
+      
+        <option value="17">N</option>
+      
+        <option value="18">O</option>
+      
+        <option value="19">P</option>
+      
+        <option value="20">Q</option>
+      
+        <option value="21">R</option>
+      
+        <option value="22">S</option>
+      
+        <option value="23">T</option>
+      
+        <option value="24">U</option>
+      
+        <option value="25">V</option>
+      
+        <option value="26">W</option>
+      
+        <option value="27">X</option>
+      
+        <option value="28">Y</option>
+      
+        <option value="29">Z</option>
+      
+        <option value="30">1</option>
+      
+        <option value="31">2</option>
+      
+        <option value="32">3</option>
+      
+        <option value="33">4</option>
+      
+        <option value="34">5</option>
+      
+        <option value="35">6</option>
+      
+        <option value="36">7</option>
+      
+        <option value="37">8</option>
+      
+        <option value="38">9</option>
+      
+        <option value="39">0</option>
+      
+        <option value="40">Enter</option>
+      
+        <option value="41">Escape</option>
+      
+        <option value="42">Backspace</option>
+      
+        <option value="43">Tab</option>
+      
+        <option value="44">Space</option>
+      
+        <option value="45">Minus</option>
+      
+        <option value="46">Equal</option>
+      
+        <option value="47">[</option>
+      
+        <option value="48">]</option>
+      
+        <option value="49">\</option>
+      
+        <option value="51">;</option>
+      
+        <option value="52">'</option>
+      
+        <option value="53">`</option>
+      
+        <option value="54">,</option>
+      
+        <option value="55">.</option>
+      
+        <option value="56">/</option>
+      
+        <option value="57">Caps Lock</option>
+      
+        <option value="58">F1</option>
+      
+        <option value="59">F2</option>
+      
+        <option value="60">F3</option>
+      
+        <option value="61">F4</option>
+      
+        <option value="62">F5</option>
+      
+        <option value="63">F6</option>
+      
+        <option value="64">F7</option>
+      
+        <option value="65">F8</option>
+      
+        <option value="66">F9</option>
+      
+        <option value="67">F10</option>
+      
+        <option value="68">F11</option>
+      
+        <option value="69">F12</option>
+      
+        <option value="70">Print Screen</option>
+      
+        <option value="71">Scroll Lock</option>
+      
+        <option value="72">Pause</option>
+      
+        <option value="73">Insert</option>
+      
+        <option value="74">Home</option>
+      
+        <option value="75">Page Up</option>
+      
+        <option value="76">Delete</option>
+      
+        <option value="77">End</option>
+      
+        <option value="78">Page Down</option>
+      
+        <option value="79">Right</option>
+      
+        <option value="80">Left</option>
+      
+        <option value="81">Down</option>
+      
+        <option value="82">Up</option>
+      
+        <option value="83">Num Lock</option>
+      
+      </select>
+    </div>
+  </div>
+
+  
+
+            
+
+            <div id="keybind-conflict" style="display:none; color:red; margin: 0.5em 0;">
+              <strong>Conflict:</strong> <span id="conflict-detail"></span>
+            </div>
+
           <input type="submit" value="Save" id="submitButton">
         </div>
 
@@ -1763,6 +5510,26 @@ function packValue(element, key, dataType, buffer) {
   return new Uint8Array(buffer);
 }
 
+function packModifierValue(modifierKey) {
+  const group = document.querySelector(`.keybind-mod[data-key="${modifierKey}"]`);
+  if (!group) return null;
+  const container = group.closest('.keybind-group');
+  if (!container) return null;
+
+  const checkboxes = container.querySelectorAll('.keybind-mod');
+  let modifierVal = 0;
+  checkboxes.forEach(cb => {
+    if (cb.checked)
+      modifierVal |= parseInt(cb.dataset.bit);
+  });
+
+  var buffer = new ArrayBuffer(8);
+  var view = new DataView(buffer);
+  view.setUint8(1, modifierVal, true);
+  view.setUint8(0, modifierKey);
+  return new Uint8Array(buffer);
+}
+
 window.addEventListener('load', function () {
   if (!("hid" in navigator)) {
     document.getElementById('warning').style.display = 'block';
@@ -1813,16 +5580,12 @@ function setValue(element, value) {
     element.checked = value;
   else
     element.value = value;
-    element.dispatchEvent(new Event('input', { bubbles: true }));
+  element.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
 
 function updateElement(key, event) {
   var dataOffset = 4;
-  var element = document.querySelector(`[data-key="${key}"]`);
-
-  if (!element)
-    return;
 
   const methods = {
     "uint32": event.data.getUint32,
@@ -1833,6 +5596,33 @@ function updateElement(key, event) {
     "int16": event.data.getInt16,
     "int8": event.data.getInt8
   };
+
+  /* Handle keybind modifier checkboxes */
+  var modCheckboxes = document.querySelectorAll(`.keybind-mod[data-key="${key}"]`);
+  if (modCheckboxes.length > 0) {
+    var value = event.data.getUint8(dataOffset, true);
+    modCheckboxes.forEach(cb => {
+      var bit = parseInt(cb.dataset.bit);
+      cb.checked = (value & bit) !== 0;
+      cb.setAttribute('fetched-value', value);
+    });
+    return;
+  }
+
+  /* Handle keybind key dropdowns */
+  var keySelect = document.querySelector(`.keybind-key1[data-key="${key}"]`) ||
+                  document.querySelector(`.keybind-key2[data-key="${key}"]`);
+  if (keySelect) {
+    var value = event.data.getUint8(dataOffset, true);
+    setValue(keySelect, value);
+    checkKeybindConflicts();
+    return;
+  }
+
+  var element = document.querySelector(`[data-key="${key}"]`);
+
+  if (!element)
+    return;
 
   dataType = element.getAttribute('data-type');
 
@@ -1892,13 +5682,103 @@ async function valueChangedHandler(element) {
   }
 }
 
+async function keybindModChanged(checkbox) {
+  var modifierKey = checkbox.dataset.key;
+  var payload = packModifierValue(modifierKey);
+  if (payload) {
+    await sendReport(packetType.setValMsg, payload, true);
+    var container = checkbox.closest('.keybind-group');
+    var allCbs = container.querySelectorAll('.keybind-mod');
+    let modVal = 0;
+    allCbs.forEach(cb => { if (cb.checked) modVal |= parseInt(cb.dataset.bit); });
+    allCbs.forEach(cb => { cb.setAttribute('fetched-value', modVal); });
+  }
+  checkKeybindConflicts();
+}
+
+async function keybindKeyChanged(selectEl) {
+  var key = selectEl.dataset.key;
+  var dataType = selectEl.dataset.type;
+  var origValue = selectEl.getAttribute('fetched-value');
+  var newValue = selectEl.value;
+
+  if (origValue != newValue) {
+    var buffer = new ArrayBuffer(8);
+    var view = new DataView(buffer);
+    view.setUint8(1, parseInt(newValue), true);
+    view.setUint8(0, parseInt(key));
+    var payload = new Uint8Array(buffer);
+
+    await sendReport(packetType.setValMsg, payload, true);
+    selectEl.setAttribute('fetched-value', newValue);
+  }
+  checkKeybindConflicts();
+}
+
+function getKeybindState() {
+  var keybinds = [];
+  document.querySelectorAll('.keybind-group').forEach(group => {
+    var name = group.dataset.keybindName;
+    var modCbs = group.querySelectorAll('.keybind-mod');
+    var modifier = 0;
+    modCbs.forEach(cb => { if (cb.checked) modifier |= parseInt(cb.dataset.bit); });
+
+    var key1El = group.querySelector('.keybind-key1');
+    var key2El = group.querySelector('.keybind-key2');
+    var key1 = key1El ? parseInt(key1El.value) : 0;
+    var key2 = key2El ? parseInt(key2El.value) : 0;
+
+    keybinds.push({ name, modifier, key1, key2 });
+  });
+  return keybinds;
+}
+
+function checkKeybindConflicts() {
+  var keybinds = getKeybindState();
+  var conflictDiv = document.getElementById('keybind-conflict');
+  var conflictDetail = document.getElementById('conflict-detail');
+  var conflicts = [];
+
+  for (var i = 0; i < keybinds.length; i++) {
+    for (var j = i + 1; j < keybinds.length; j++) {
+      var a = keybinds[i];
+      var b = keybinds[j];
+
+      if (a.modifier === 0 && a.key1 === 0 && a.key2 === 0) continue;
+      if (b.modifier === 0 && b.key1 === 0 && b.key2 === 0) continue;
+
+      if (a.modifier === b.modifier) {
+        var aKeys = [a.key1, a.key2].filter(k => k !== 0).sort();
+        var bKeys = [b.key1, b.key2].filter(k => k !== 0).sort();
+        if (aKeys.length === bKeys.length && aKeys.every((v, idx) => v === bKeys[idx])) {
+          conflicts.push(`"${a.name}" and "${b.name}"`);
+        }
+      }
+    }
+  }
+
+  if (conflicts.length > 0) {
+    conflictDetail.textContent = conflicts.join(', ');
+    conflictDiv.style.display = 'block';
+  } else {
+    conflictDiv.style.display = 'none';
+  }
+
+  return conflicts.length === 0;
+}
+
 async function saveHandler() {
+  if (!checkKeybindConflicts()) return;
+
   const elements = document.querySelectorAll('.api');
 
   if (!device || !device.opened)
     return;
 
   for (const element of elements) {
+    if (element.classList.contains('keybind-mod'))
+      continue;
+
     var origValue = element.getAttribute('fetched-value')
 
     if (element.hasAttribute('readonly'))
@@ -1907,12 +5787,36 @@ async function saveHandler() {
     if (origValue != getValue(element))
       await valueChangedHandler(element);
   }
+
+  for (const group of document.querySelectorAll('.keybind-group')) {
+    var modCbs = group.querySelectorAll('.keybind-mod');
+    if (modCbs.length === 0) continue;
+    var modifierKey = modCbs[0].dataset.key;
+    var origVal = modCbs[0].getAttribute('fetched-value');
+    let modVal = 0;
+    modCbs.forEach(cb => { if (cb.checked) modVal |= parseInt(cb.dataset.bit); });
+    if (parseInt(origVal) !== modVal) {
+      var payload = packModifierValue(modifierKey);
+      if (payload)
+        await sendReport(packetType.setValMsg, payload, true);
+      modCbs.forEach(cb => { cb.setAttribute('fetched-value', modVal); });
+    }
+  }
+
   await sendReport(packetType.saveConfigMsg, [], true);
 }
 
 async function wipeConfigHandler() {
   await sendReport(packetType.wipeConfigMsg, [], true);
 }
+
+document.addEventListener('change', function(e) {
+  if (e.target.classList.contains('keybind-mod')) {
+    keybindModChanged(e.target);
+  } else if (e.target.classList.contains('keybind-key1') || e.target.classList.contains('keybind-key2')) {
+    keybindKeyChanged(e.target);
+  }
+});
   </script>
 </body>
 

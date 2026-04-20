@@ -106,6 +106,7 @@ void screenlock_hotkey_handler(device_t *state, hid_keyboard_report_t *report) {
 void wipe_config_hotkey_handler(device_t *state, hid_keyboard_report_t *report) {
     wipe_config();
     load_config(state);
+    load_keybinds(state);
     send_value(ENABLE, WIPE_CONFIG_MSG);
 }
 
@@ -243,6 +244,7 @@ void handle_flash_led_msg(uart_packet_t *packet, device_t *state) {
 void handle_wipe_config_msg(uart_packet_t *packet, device_t *state) {
     wipe_config();
     load_config(state);
+    load_keybinds(state);
 }
 
 /* Update screensaver state after received message */
@@ -293,6 +295,10 @@ void handle_api_msgs(uart_packet_t *packet, device_t *state) {
             return;
 
         memcpy(ptr, &packet->data[1], map->len);
+
+        /* Reload keybinds if a keybind config field was changed */
+        if (value_idx >= 83 && value_idx <= 112)
+            load_keybinds(state);
     }
     else if (packet->type == GET_VAL_MSG) {
         uart_packet_t response = {.type=GET_VAL_MSG, .data={[0] = value_idx}};

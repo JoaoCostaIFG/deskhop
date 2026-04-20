@@ -59,7 +59,56 @@ const config_t default_config = {
     .force_mouse_boot_mode = false,
     .force_gaming_mode = false,
     .enable_acceleration = ENABLE_ACCELERATION,
-    .hotkey_toggle = HOTKEY_TOGGLE,
     .kbd_led_as_indicator = KBD_LED_AS_INDICATOR,
     .jump_threshold = JUMP_THRESHOLD,
+    .keybind_output_toggle = {
+        .modifier = KEYBOARD_MODIFIER_LEFTCTRL,
+        .key1 = HID_KEY_CAPS_LOCK,
+        .key2 = 0,
+    },
+    .keybind_mouse_zoom = {
+        .modifier = KEYBOARD_MODIFIER_RIGHTALT | KEYBOARD_MODIFIER_RIGHTCTRL,
+        .key1 = 0,
+        .key2 = 0,
+    },
+    .keybind_switch_lock = {
+        .modifier = KEYBOARD_MODIFIER_RIGHTCTRL,
+        .key1 = HID_KEY_K,
+        .key2 = 0,
+    },
+    .keybind_screen_lock = {
+        .modifier = KEYBOARD_MODIFIER_RIGHTCTRL,
+        .key1 = HID_KEY_L,
+        .key2 = 0,
+    },
+    .keybind_gaming_mode = {
+        .modifier = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
+        .key1 = HID_KEY_G,
+        .key2 = 0,
+    },
+    .keybind_screensaver_pong = {
+        .modifier = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
+        .key1 = HID_KEY_S,
+        .key2 = 0,
+    },
+    .keybind_screensaver_jitter = {
+        .modifier = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
+        .key1 = HID_KEY_J,
+        .key2 = 0,
+    },
+    .keybind_screensaver_disable = {
+        .modifier = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
+        .key1 = HID_KEY_X,
+        .key2 = 0,
+    },
+    .keybind_record_border = {
+        .modifier = KEYBOARD_MODIFIER_RIGHTSHIFT,
+        .key1 = HID_KEY_F12,
+        .key2 = HID_KEY_Y,
+    },
+    .keybind_config_mode = {
+        .modifier = KEYBOARD_MODIFIER_LEFTCTRL | KEYBOARD_MODIFIER_RIGHTSHIFT,
+        .key1 = HID_KEY_C,
+        .key2 = HID_KEY_O,
+    },
 };

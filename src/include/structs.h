@@ -23,6 +23,12 @@ typedef struct { // Maps message type -> message handler function
 } uart_handler_t;
 
 typedef struct {
+    uint8_t modifier;
+    uint8_t key1;
+    uint8_t key2;
+} keybind_t;
+
+typedef struct {
     uint8_t modifier;                 // Which modifier is pressed
     uint8_t keys[KEYS_IN_USB_REPORT]; // Which keys need to be pressed
     uint8_t key_count;                // How many keys are pressed
@@ -73,12 +79,22 @@ typedef struct {
     uint8_t force_kbd_boot_protocol;
 
     uint8_t kbd_led_as_indicator;
-    uint8_t hotkey_toggle;
     uint8_t enable_acceleration;
 
     uint8_t enforce_ports;
     uint8_t force_gaming_mode;
     uint16_t jump_threshold;
+
+    keybind_t keybind_output_toggle;
+    keybind_t keybind_mouse_zoom;
+    keybind_t keybind_switch_lock;
+    keybind_t keybind_screen_lock;
+    keybind_t keybind_gaming_mode;
+    keybind_t keybind_screensaver_pong;
+    keybind_t keybind_screensaver_jitter;
+    keybind_t keybind_screensaver_disable;
+    keybind_t keybind_record_border;
+    keybind_t keybind_config_mode;
 
     output_t output[NUM_SCREENS];
     uint32_t _reserved;

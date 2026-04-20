@@ -70,6 +70,26 @@ function packValue(element, key, dataType, buffer) {
   return new Uint8Array(buffer);
 }
 
+function packModifierValue(modifierKey) {
+  const group = document.querySelector(`.keybind-mod[data-key="${modifierKey}"]`);
+  if (!group) return null;
+  const container = group.closest('.keybind-group');
+  if (!container) return null;
+
+  const checkboxes = container.querySelectorAll('.keybind-mod');
+  let modifierVal = 0;
+  checkboxes.forEach(cb => {
+    if (cb.checked)
+      modifierVal |= parseInt(cb.dataset.bit);
+  });
+
+  var buffer = new ArrayBuffer(8);
+  var view = new DataView(buffer);
+  view.setUint8(1, modifierVal, true);
+  view.setUint8(0, modifierKey);
+  return new Uint8Array(buffer);
+}
+
 window.addEventListener('load', function () {
   if (!("hid" in navigator)) {
     document.getElementById('warning').style.display = 'block';
@@ -120,16 +140,12 @@ function setValue(element, value) {
     element.checked = value;
   else
     element.value = value;
-    element.dispatchEvent(new Event('input', { bubbles: true }));
+  element.dispatchEvent(new Event('input', { bubbles: true }));
 }
 
 
 function updateElement(key, event) {
   var dataOffset = 4;
-  var element = document.querySelector(`[data-key="${key}"]`);
-
-  if (!element)
-    return;
 
   const methods = {
     "uint32": event.data.getUint32,
@@ -140,6 +156,33 @@ function updateElement(key, event) {
     "int16": event.data.getInt16,
     "int8": event.data.getInt8
   };
+
+  /* Handle keybind modifier checkboxes */
+  var modCheckboxes = document.querySelectorAll(`.keybind-mod[data-key="${key}"]`);
+  if (modCheckboxes.length > 0) {
+    var value = event.data.getUint8(dataOffset, true);
+    modCheckboxes.forEach(cb => {
+      var bit = parseInt(cb.dataset.bit);
+      cb.checked = (value & bit) !== 0;
+      cb.setAttribute('fetched-value', value);
+    });
+    return;
+  }
+
+  /* Handle keybind key dropdowns */
+  var keySelect = document.querySelector(`.keybind-key1[data-key="${key}"]`) ||
+                  document.querySelector(`.keybind-key2[data-key="${key}"]`);
+  if (keySelect) {
+    var value = event.data.getUint8(dataOffset, true);
+    setValue(keySelect, value);
+    checkKeybindConflicts();
+    return;
+  }
+
+  var element = document.querySelector(`[data-key="${key}"]`);
+
+  if (!element)
+    return;
 
   dataType = element.getAttribute('data-type');
 
@@ -199,13 +242,103 @@ async function valueChangedHandler(element) {
   }
 }
 
+async function keybindModChanged(checkbox) {
+  var modifierKey = checkbox.dataset.key;
+  var payload = packModifierValue(modifierKey);
+  if (payload) {
+    await sendReport(packetType.setValMsg, payload, true);
+    var container = checkbox.closest('.keybind-group');
+    var allCbs = container.querySelectorAll('.keybind-mod');
+    let modVal = 0;
+    allCbs.forEach(cb => { if (cb.checked) modVal |= parseInt(cb.dataset.bit); });
+    allCbs.forEach(cb => { cb.setAttribute('fetched-value', modVal); });
+  }
+  checkKeybindConflicts();
+}
+
+async function keybindKeyChanged(selectEl) {
+  var key = selectEl.dataset.key;
+  var dataType = selectEl.dataset.type;
+  var origValue = selectEl.getAttribute('fetched-value');
+  var newValue = selectEl.value;
+
+  if (origValue != newValue) {
+    var buffer = new ArrayBuffer(8);
+    var view = new DataView(buffer);
+    view.setUint8(1, parseInt(newValue), true);
+    view.setUint8(0, parseInt(key));
+    var payload = new Uint8Array(buffer);
+
+    await sendReport(packetType.setValMsg, payload, true);
+    selectEl.setAttribute('fetched-value', newValue);
+  }
+  checkKeybindConflicts();
+}
+
+function getKeybindState() {
+  var keybinds = [];
+  document.querySelectorAll('.keybind-group').forEach(group => {
+    var name = group.dataset.keybindName;
+    var modCbs = group.querySelectorAll('.keybind-mod');
+    var modifier = 0;
+    modCbs.forEach(cb => { if (cb.checked) modifier |= parseInt(cb.dataset.bit); });
+
+    var key1El = group.querySelector('.keybind-key1');
+    var key2El = group.querySelector('.keybind-key2');
+    var key1 = key1El ? parseInt(key1El.value) : 0;
+    var key2 = key2El ? parseInt(key2El.value) : 0;
+
+    keybinds.push({ name, modifier, key1, key2 });
+  });
+  return keybinds;
+}
+
+function checkKeybindConflicts() {
+  var keybinds = getKeybindState();
+  var conflictDiv = document.getElementById('keybind-conflict');
+  var conflictDetail = document.getElementById('conflict-detail');
+  var conflicts = [];
+
+  for (var i = 0; i < keybinds.length; i++) {
+    for (var j = i + 1; j < keybinds.length; j++) {
+      var a = keybinds[i];
+      var b = keybinds[j];
+
+      if (a.modifier === 0 && a.key1 === 0 && a.key2 === 0) continue;
+      if (b.modifier === 0 && b.key1 === 0 && b.key2 === 0) continue;
+
+      if (a.modifier === b.modifier) {
+        var aKeys = [a.key1, a.key2].filter(k => k !== 0).sort();
+        var bKeys = [b.key1, b.key2].filter(k => k !== 0).sort();
+        if (aKeys.length === bKeys.length && aKeys.every((v, idx) => v === bKeys[idx])) {
+          conflicts.push(`"${a.name}" and "${b.name}"`);
+        }
+      }
+    }
+  }
+
+  if (conflicts.length > 0) {
+    conflictDetail.textContent = conflicts.join(', ');
+    conflictDiv.style.display = 'block';
+  } else {
+    conflictDiv.style.display = 'none';
+  }
+
+  return conflicts.length === 0;
+}
+
 async function saveHandler() {
+  if (!checkKeybindConflicts()) return;
+
   const elements = document.querySelectorAll('.api');
 
   if (!device || !device.opened)
     return;
 
   for (const element of elements) {
+    if (element.classList.contains('keybind-mod'))
+      continue;
+
     var origValue = element.getAttribute('fetched-value')
 
     if (element.hasAttribute('readonly'))
@@ -214,9 +347,33 @@ async function saveHandler() {
     if (origValue != getValue(element))
       await valueChangedHandler(element);
   }
+
+  for (const group of document.querySelectorAll('.keybind-group')) {
+    var modCbs = group.querySelectorAll('.keybind-mod');
+    if (modCbs.length === 0) continue;
+    var modifierKey = modCbs[0].dataset.key;
+    var origVal = modCbs[0].getAttribute('fetched-value');
+    let modVal = 0;
+    modCbs.forEach(cb => { if (cb.checked) modVal |= parseInt(cb.dataset.bit); });
+    if (parseInt(origVal) !== modVal) {
+      var payload = packModifierValue(modifierKey);
+      if (payload)
+        await sendReport(packetType.setValMsg, payload, true);
+      modCbs.forEach(cb => { cb.setAttribute('fetched-value', modVal); });
+    }
+  }
+
   await sendReport(packetType.saveConfigMsg, [], true);
 }
 
 async function wipeConfigHandler() {
   await sendReport(packetType.wipeConfigMsg, [], true);
 }
+
+document.addEventListener('change', function(e) {
+  if (e.target.classList.contains('keybind-mod')) {
+    keybindModChanged(e.target);
+  } else if (e.target.classList.contains('keybind-key1') || e.target.classList.contains('keybind-key2')) {
+    keybindKeyChanged(e.target);
+  }
+});

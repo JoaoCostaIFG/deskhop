@@ -117,6 +117,16 @@
               {% include "form.html" with context %}
             {% endfor %}
 
+          <h3>Keybinds</h3>
+
+            {% for item in keybinds %}
+              {% include "form.html" with context %}
+            {% endfor %}
+
+            <div id="keybind-conflict" style="display:none; color:red; margin: 0.5em 0;">
+              <strong>Conflict:</strong> <span id="conflict-detail"></span>
+            </div>
+
           <input type="submit" value="Save" id="submitButton">
         </div>
 

@@ -44,6 +44,30 @@
 
   </div>
 
+  {% elif item.get("elem") == "keybind" %}
+  <div class="keybind-group" data-keybind-name="{{ item.name }}">
+    <label class="keybind-label">{{ item.name }}</label>
+    <div class="keybind-modifiers">
+    {% for bit, mod_name in item.modifier_bits.items() %}
+      <label class="modifier-check"><input type="checkbox" class="keybind-mod api" data-type="uint8" data-key="{{ item.modifier_key }}" data-bit="{{ bit }}" /> {{ mod_name }}</label>
+    {% endfor %}
+    </div>
+    <div class="keybind-keys">
+      <label class="keybind-key-label">Key 1:</label>
+      <select class="keybind-key1 api" data-type="uint8" data-key="{{ item.key1_key }}" required>
+      {% for k, v in item.key_options.items() %}
+        <option value="{{ k }}">{{ v }}</option>
+      {% endfor %}
+      </select>
+      <label class="keybind-key-label">Key 2:</label>
+      <select class="keybind-key2 api" data-type="uint8" data-key="{{ item.key2_key }}" required>
+      {% for k, v in item.key_options.items() %}
+        <option value="{{ k }}">{{ v }}</option>
+      {% endfor %}
+      </select>
+    </div>
+  </div>
+
   {% elif item["values"] %}
     {{ label(item, class='') }}
     <select class="api" data-type="{{ item.type }}" data-key="{{ key }}" required>

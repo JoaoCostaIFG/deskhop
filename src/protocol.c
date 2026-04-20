@@ -54,11 +54,60 @@ const field_map_t api_field_map[] = {
     { 71, false, UINT8,  1, offsetof(device_t, config.force_mouse_boot_mode) },
     { 72, false, UINT8,  1, offsetof(device_t, config.force_kbd_boot_protocol) },
     { 73, false, UINT8,  1, offsetof(device_t, config.kbd_led_as_indicator) },
-    { 74, false, UINT8,  1, offsetof(device_t, config.hotkey_toggle) },
     { 75, false, UINT8,  1, offsetof(device_t, config.enable_acceleration) },
     { 76, false, UINT8,  1, offsetof(device_t, config.enforce_ports) },
     { 77, false, UINT16, 2, offsetof(device_t, config.jump_threshold) },
     { 78, false, UINT8,  1, offsetof(device_t, config.force_gaming_mode) },
+
+    /* Keybinds - Output Toggle */
+    { 83, false, UINT8,  1, offsetof(device_t, config.keybind_output_toggle.modifier) },
+    { 84, false, UINT8,  1, offsetof(device_t, config.keybind_output_toggle.key1) },
+    { 85, false, UINT8,  1, offsetof(device_t, config.keybind_output_toggle.key2) },
+
+    /* Keybinds - Mouse Zoom */
+    { 86, false, UINT8,  1, offsetof(device_t, config.keybind_mouse_zoom.modifier) },
+    { 87, false, UINT8,  1, offsetof(device_t, config.keybind_mouse_zoom.key1) },
+    { 88, false, UINT8,  1, offsetof(device_t, config.keybind_mouse_zoom.key2) },
+
+    /* Keybinds - Switch Lock */
+    { 89, false, UINT8,  1, offsetof(device_t, config.keybind_switch_lock.modifier) },
+    { 90, false, UINT8,  1, offsetof(device_t, config.keybind_switch_lock.key1) },
+    { 91, false, UINT8,  1, offsetof(device_t, config.keybind_switch_lock.key2) },
+
+    /* Keybinds - Screen Lock */
+    { 92, false, UINT8,  1, offsetof(device_t, config.keybind_screen_lock.modifier) },
+    { 93, false, UINT8,  1, offsetof(device_t, config.keybind_screen_lock.key1) },
+    { 94, false, UINT8,  1, offsetof(device_t, config.keybind_screen_lock.key2) },
+
+    /* Keybinds - Gaming Mode */
+    { 95, false, UINT8,  1, offsetof(device_t, config.keybind_gaming_mode.modifier) },
+    { 96, false, UINT8,  1, offsetof(device_t, config.keybind_gaming_mode.key1) },
+    { 97, false, UINT8,  1, offsetof(device_t, config.keybind_gaming_mode.key2) },
+
+    /* Keybinds - Screensaver Pong */
+    { 98, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_pong.modifier) },
+    { 99, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_pong.key1) },
+    {100, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_pong.key2) },
+
+    /* Keybinds - Screensaver Jitter */
+    {101, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_jitter.modifier) },
+    {102, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_jitter.key1) },
+    {103, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_jitter.key2) },
+
+    /* Keybinds - Screensaver Disable */
+    {104, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_disable.modifier) },
+    {105, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_disable.key1) },
+    {106, false, UINT8,  1, offsetof(device_t, config.keybind_screensaver_disable.key2) },
+
+    /* Keybinds - Record Border Y */
+    {107, false, UINT8,  1, offsetof(device_t, config.keybind_record_border.modifier) },
+    {108, false, UINT8,  1, offsetof(device_t, config.keybind_record_border.key1) },
+    {109, false, UINT8,  1, offsetof(device_t, config.keybind_record_border.key2) },
+
+    /* Keybinds - Config Mode */
+    {110, false, UINT8,  1, offsetof(device_t, config.keybind_config_mode.modifier) },
+    {111, false, UINT8,  1, offsetof(device_t, config.keybind_config_mode.key1) },
+    {112, false, UINT8,  1, offsetof(device_t, config.keybind_config_mode.key2) },
 
     /* Firmware */
     { 78, true,  UINT16, 2, offsetof(device_t, _running_fw.version) },

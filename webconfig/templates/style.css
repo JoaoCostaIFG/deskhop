@@ -663,3 +663,58 @@ img {
 .online {
   opacity: 0.5;
 }
+
+.keybind-group {
+  border: 0.1rem solid #d7e5f0;
+  border-radius: .4rem;
+  padding: 1.0rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.keybind-label {
+  font-weight: 700;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.keybind-modifiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  margin-bottom: .8rem;
+}
+
+.modifier-check {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-weight: normal;
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+.modifier-check input[type='checkbox'] {
+  margin: 0;
+}
+
+.keybind-keys {
+  display: flex;
+  align-items: center;
+  gap: 1.0rem;
+  flex-wrap: wrap;
+}
+
+.keybind-key-label {
+  font-weight: normal;
+  font-size: 1.4rem;
+  display: inline;
+  margin-bottom: 0;
+}
+
+.keybind-key1,
+.keybind-key2 {
+  width: auto;
+  min-width: 14rem;
+  height: 3.0rem;
+  margin-bottom: 0;
+}

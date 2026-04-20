@@ -26,24 +26,11 @@
  * ===========  Hotkey for output switching  =========== *
  * ===================================================== *
  *
- * Everyone is different, I prefer to use caps lock because I HATE SHOUTING :)
- * You might prefer something else. Pick something from the list found at:
+ * Keybinds are now configurable via the webconfig UI.
+ * The defaults below are used only when no saved config exists.
  *
- * https://github.com/hathach/tinyusb/blob/master/src/class/hid/hid.h
- *
- * defined as HID_KEY_<something>
- *
- * In addition, there is an optional modifier you can use for the hotkey
- * switching. Currently, it's set to LEFT CTRL, you can change it by
- * redefining HOTKEY_MODIFIER here from KEYBOARD_MODIFIER_LEFTCTRL to something
- * else (check file referenced below) or HID_KEY_NONE.
- *
- * If you do not want to use a key for switching outputs, you may be tempted
- * to select HID_KEY_NONE here as well; don't do that! That code appears in many
- * HID messages and the result will be a non-functional keyboard. Instead, choose
- * a key that is unlikely to ever appear on a keyboard that you will use.
- * HID_KEY_F24 is probably a good choice as keyboards with 24 function keys
- * are rare.
+ * HOTKEY_MODIFIER: Modifier bitmask for the output toggle hotkey
+ * HOTKEY_TOGGLE:   Key code for the output toggle hotkey
  *
  * */
 
