@@ -57,6 +57,7 @@ const config_t default_config = {
     .enforce_ports = ENFORCE_PORTS,
     .force_kbd_boot_protocol = ENFORCE_KEYBOARD_BOOT_PROTOCOL,
     .force_mouse_boot_mode = false,
+    .force_gaming_mode = false,
     .enable_acceleration = ENABLE_ACCELERATION,
     .hotkey_toggle = HOTKEY_TOGGLE,
     .kbd_led_as_indicator = KBD_LED_AS_INDICATOR,

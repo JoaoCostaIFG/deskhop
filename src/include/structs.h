@@ -77,6 +77,7 @@ typedef struct {
     uint8_t enable_acceleration;
 
     uint8_t enforce_ports;
+    uint8_t force_gaming_mode;
     uint16_t jump_threshold;
 
     output_t output[NUM_SCREENS];
