@@ -243,6 +243,10 @@ void initial_setup(device_t *state) {
     /* Initialize UART queue */
     queue_init(&state->uart_tx_queue, sizeof(uart_packet_t), UART_QUEUE_LENGTH);
 
+    /* Sync gaming mode state with the other board if force_gaming_mode is enabled */
+    if (state->config.force_gaming_mode)
+        send_value(state->gaming_mode, GAMING_MODE_MSG);
+
     /* Setup RP2040 Core 1 */
     multicore_reset_core1();
     multicore_launch_core1(core1_main);
