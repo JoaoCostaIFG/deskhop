@@ -267,6 +267,10 @@ void initial_setup(device_t *state) {
     /* Update the core1 initial pass timestamp before enabling the watchdog */
     state->core1_last_loop_pass = time_us_64();
 
+    /* Assume peer is online at startup, will be detected offline via heartbeat timeout */
+    state->peer_online = true;
+    state->last_heartbeat_received = time_us_64();
+
     /* Setup the watchdog so we reboot and recover from a crash */
     watchdog_enable(WATCHDOG_TIMEOUT, WATCHDOG_PAUSE_ON_DEBUG);
 }

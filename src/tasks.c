@@ -170,6 +170,21 @@ void heartbeat_output_task(device_t *state) {
     queue_try_add(&global_state.uart_tx_queue, &packet);
 }
 
+/* Detect peer board going offline and auto-fallback to local output */
+void peer_timeout_task(device_t *state) {
+    uint64_t now = time_us_64();
+
+    if (state->peer_online) {
+        if (now - state->last_heartbeat_received > PEER_TIMEOUT_US) {
+            state->peer_online = false;
+
+            if (state->active_output != BOARD_ROLE) {
+                set_active_output(state, BOARD_ROLE);
+            }
+        }
+    }
+}
+
 
 /* Process other outgoing hid report messages. */
 void process_hid_queue_task(device_t *state) {

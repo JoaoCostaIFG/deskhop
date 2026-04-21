@@ -153,6 +153,8 @@ typedef struct {
     bool tud_connected;      // True when TinyUSB device successfully connects
     bool keyboard_connected; // True when our keyboard is connected locally
     bool mouse_connected;    // True when our mouse is connected locally
+    bool peer_online;        // True when the other board responded to heartbeats recently
+    uint64_t last_heartbeat_received; // Timestamp of last received heartbeat from peer
 
     /* Feature flags */
     bool mouse_zoom;         // True when "mouse zoom" is enabled

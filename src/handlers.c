@@ -21,6 +21,9 @@ void output_toggle_hotkey_handler(device_t *state, hid_keyboard_report_t *report
     if (state->switch_lock)
         return;
 
+    if (!state->peer_online)
+        return;
+
     state->active_output ^= 1;
     set_active_output(state, state->active_output);
 };
@@ -366,6 +369,9 @@ void handle_response_byte_msg(uart_packet_t *packet, device_t *state) {
 /* Process a request to read a firmware package from flash */
 void handle_heartbeat_msg(uart_packet_t *packet, device_t *state) {
     uint16_t other_running_version = packet->data16[0];
+
+    state->last_heartbeat_received = time_us_64();
+    state->peer_online = true;
 
     if (state->fw.upgrade_in_progress)
         return;

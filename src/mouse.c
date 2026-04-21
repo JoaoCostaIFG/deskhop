@@ -245,6 +245,10 @@ void do_screen_switch(device_t *state, int direction) {
     if (state->switch_lock)
         return;
 
+    /* Block switching to offline peer */
+    if (!state->peer_online)
+        return;
+
     /* In gaming mode, only allow switching if edge detection enabled and triggered */
     if (state->gaming_mode && !state->config.gaming_edge_enabled)
         return;
