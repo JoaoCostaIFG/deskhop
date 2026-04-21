@@ -345,7 +345,7 @@ enum screen_pos_e check_gaming_edge_switch(device_t *state, int offset_x, int of
     state->gaming_edge_vertical_accum += offset_y;
 
     uint32_t abs_vertical = (state->gaming_edge_vertical_accum < 0)
-                                ? (uint32_t)(-state->gaming_edge_vertical_accum)
+                                ? -(uint32_t)state->gaming_edge_vertical_accum
                                 : (uint32_t)state->gaming_edge_vertical_accum;
 
     if (abs_vertical > output->gaming_edge_max_vertical) {

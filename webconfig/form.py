@@ -160,7 +160,7 @@ OUTPUT_ = [
     FormField(12, "Max Time (μs)", None, {}, "uint64"),
     FormField(1004, "Gaming Edge Switching", elem="label"),
     FormField(
-        13, "Edge Threshold", 20000, {"min": 1000, "max": 100000}, "uint32", "range"
+        13, "Edge Threshold", 20000, {"min": 100, "max": 100000}, "uint32", "range"
     ),
     FormField(
         14, "Edge Window (ms)", 1000, {"min": 100, "max": 5000}, "uint32", "range"
